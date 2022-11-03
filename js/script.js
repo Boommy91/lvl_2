@@ -1,11 +1,8 @@
 
-var STORAGE_KEY = 'api\v1\getitems.php'
-let test = localStorage.getItem(STORAGE_KEY)
-console.log(test);
+var STORAGE_KEY = 'api/v1/storage.json'
 var todoStorage = {
-
   fetch: function () {
-    var todos = JSON.parse(localStorage.getItem(STORAGE_KEY))
+    var todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
     todos.forEach(function (todo, index) {
       todo.id = index
     })
@@ -13,8 +10,6 @@ var todoStorage = {
     return todos
   },
   save: function (todos) {
-    console.log(todos);
-
     localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
   }
 }
@@ -94,13 +89,27 @@ var app = new Vue({
       this.todos.push({
         id: todoStorage.uid++,
         title: value,
-        completed: false
+        completed: false,
       })
+      $.ajax({
+        url: 'add.php',
+        type: 'POST',
+        cache: false,
+        data: { 'val': value },
+       
+        success: function (data) {
+            if(!data){
+                alert('error');
+            }
+            alert(data);
+        }
+    })
+
+
       this.newTodo = ''
     },
 
     removeTodo: function (todo) {
-      console.log('remove');
       this.todos.splice(this.todos.indexOf(todo), 1)
     },
 
