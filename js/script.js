@@ -1,5 +1,5 @@
 
-var STORAGE_KEY = 'api/v1/storage.json'
+var STORAGE_KEY = './api/v1/getItem.php'
 var todoStorage = {
   fetch: function () {
     var todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
@@ -13,6 +13,7 @@ var todoStorage = {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
   }
 }
+
 
 // visibility filters
 var filters = {
@@ -91,8 +92,9 @@ var app = new Vue({
         title: value,
         completed: false,
       })
+      // This is mine
       $.ajax({
-        url: 'add.php',
+        url: './api/v1/addItem.php',
         type: 'POST',
         cache: false,
         data: { 'val': value },
@@ -104,8 +106,6 @@ var app = new Vue({
             alert(data);
         }
     })
-
-
       this.newTodo = ''
     },
 
