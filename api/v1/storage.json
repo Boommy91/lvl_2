@@ -1,1 +1,19 @@
-{"items":{"id":"0","text":"dfgh","checked":false}}
+{
+    "items": [
+        {
+            "id": "0",
+            "text": "hello",
+            "checked": true
+        },
+        {
+            "id": "1",
+            "text": "jdfghkljdgfh",
+            "checked": true
+        },
+        {
+            "id": "2",
+            "text": "hi",
+            "checked": true
+        }
+    ]
+}
