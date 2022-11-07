@@ -94,6 +94,13 @@ var app = new Vue({
         title: value,
         completed: false
       })
+      // This is mine
+      $.ajax({
+        url: './api/v1/addItem.php',
+        type: 'POST',
+        cache: false,
+        data: { 'val': value }
+      })
       this.newTodo = ''
     },
 
