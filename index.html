@@ -1,61 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>LVL_2</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <link rel="stylesheet" href="style/style.css">
-
-
-
+    <meta charset="UTF-8">
+    <title>Todo list</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-  <section class="todoapp">
-    <header class="header">
-      <h1>todos</h1>
-      <input class="new-todo" autofocus autocomplete="off" placeholder="What needs to be done?" v-model="newTodo"
-        @keyup.enter="addTodo">
-    </header>
-    <section class="main" v-show="todos.length" v-cloak>
-      <input id="toggle-all" class="toggle-all" type="checkbox" v-model="allDone">
-      <label for="toggle-all"></label>
-      <ul class="todo-list">
-        <li v-for="todo in filteredTodos" class="todo" :key="todo.id"
-          :class="{ completed: todo.completed, editing: todo == editedTodo }">
-          <div class="view">
-            <input class="toggle" type="checkbox" v-model="todo.completed">
-            <label @dblclick="editTodo(todo)">{{ todo.title }}</label>
-            <button class="destroy" @click="removeTodo(todo)"></button>
-          </div>
-          <input class="edit" type="text" v-model="todo.title" v-todo-focus="todo == editedTodo" @blur="doneEdit(todo)"
-            @keyup.enter="doneEdit(todo)" @keyup.esc="cancelEdit(todo)">
-        </li>
-      </ul>
-    </section>
-    <footer class="footer" v-show="todos.length" v-cloak>
-      <span class="todo-count">
-        <strong>{{ remaining }}</strong> {{ remaining | pluralize }} left
-      </span>
-      <ul class="filters">
-        <li><a href="#/all" :class="{ selected: visibility == 'all' }">All</a></li>
-        <li><a href="#/active" :class="{ selected: visibility == 'active' }">Active</a></li>
-        <li><a href="#/completed" :class="{ selected: visibility == 'completed' }">Completed</a></li>
-      </ul>
-      <button class="clear-completed" @click="removeCompleted" v-show="todos.length > remaining">
-        Clear completed
-      </button>
-    </footer>
-  </section>
-  <footer class="info">
-    <p>Double-click to edit a todo</p>
-    <p>Written by <a href="http://evanyou.me">Evan You</a></p>
-    <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
-  </footer>
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
-  <script src="js/script.js"></script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-default">
+
+            </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--         <h1>TODO LIST</h1>-->
+<!--            <form action="POST">-->
+<!--                <input type="text" placeholder="enter your todo"/>-->
+<!--            </form>-->
+        </div>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 </html>

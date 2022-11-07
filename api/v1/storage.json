@@ -6,9 +6,9 @@
       "checked": true
     },
     {
-      "id": 1,
-      "text": "two",
-      "checked": true
+      "id": "1",
+      "text": "new text",
+      "checked": "false"
     },
     {
       "id": 3,
