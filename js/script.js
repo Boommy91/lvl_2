@@ -2,7 +2,8 @@
 // and hash-based routing in ~120 effective lines of JavaScript.
 
 // localStorage persistence
-var STORAGE_KEY = 'todos-vuejs-2.0'
+
+var STORAGE_KEY = 'api/v1/getItem.php'
 var todoStorage = {
   fetch: function () {
     var todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')

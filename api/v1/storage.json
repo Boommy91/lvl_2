@@ -1,8 +1,18 @@
 {
   "items": [
     {
-      "id": "0",
-      "text": "hello",
+      "id": 0,
+      "text": "one",
+      "checked": true
+    },
+    {
+      "id": 1,
+      "text": "two",
+      "checked": true
+    },
+    {
+      "id": 3,
+      "text": "four",
       "checked": true
     }
   ]
