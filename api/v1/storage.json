@@ -2,17 +2,12 @@
   "items": [
     {
       "id": 0,
-      "text": "one",
+      "text": "hello",
       "checked": true
     },
     {
-      "id": "1",
-      "text": "new text",
-      "checked": "false"
-    },
-    {
-      "id": 3,
-      "text": "four",
+      "id": 1,
+      "text": "hello",
       "checked": true
     }
   ]

@@ -1,4 +1,16 @@
+body{
+    background-color: #e1f3f0;
+}
 
 .name{
     color: darkgreen;
+}
+.container{
+}
+.pic{
+    margin-left: 40px;
+    width: 100%;
+}
+.image{
+    margin-left: 370px;
 }
