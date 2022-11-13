@@ -1,8 +1,24 @@
+// $.getJSON( "./api/v1/storage.json", function( data ) {
+//     data.items.forEach(element=>{
+//             t+=element['text'] + "\n"});
+// });
+$.getJSON('./api/v1/getItem.php', {}, function(data) {
+    $.each(data, function(index, element) {
+        $('body').append($('<div>', {
+            text: element.name
+        }));
+    });
+});
+
+
 $("#btn").click(function () {
-    var txt = $("#textarea").val();
-    if (txt !== "") {
-        $('#txt').text(txt);
-    }
+
+    // var txt = $("#textarea").val();
+    // if (txt !== "") {
+    //     $("#textarea").fadeIn("slow", function () {
+    //         $('#txt').prepend(txt + "<p>");
+    //     })
+    // }
 
     $.ajax({
         url: './api/v1/addItem.php',
@@ -20,9 +36,6 @@ input.addEventListener("keypress", function (event) {
     }
 });
 
-$.getJSON('./api/v1/storage.json', function (data) {
-    console.log(data.items);
-});
 
 
 
