@@ -1,24 +1,9 @@
-// $.getJSON( "./api/v1/storage.json", function( data ) {
-//     data.items.forEach(element=>{
-//             t+=element['text'] + "\n"});
-// });
-$.getJSON('./api/v1/getItem.php', {}, function(data) {
-    $.each(data, function(index, element) {
-        $('body').append($('<div>', {
-            text: element.name
-        }));
-    });
-});
-
-
 $("#btn").click(function () {
 
-    // var txt = $("#textarea").val();
-    // if (txt !== "") {
-    //     $("#textarea").fadeIn("slow", function () {
-    //         $('#txt').prepend(txt + "<p>");
-    //     })
-    // }
+    var txt = $("#textarea").val();
+    if (txt !== "") {
+            $('#txt').prepend(txt + "<br>");
+    }
 
     $.ajax({
         url: './api/v1/addItem.php',
@@ -36,6 +21,18 @@ input.addEventListener("keypress", function (event) {
     }
 });
 
+$(document).ready(function () {
 
+    // FETCHING DATA FROM JSON FILE
+    $.getJSON("api/v1/storage.json",
+        function (data) {
+            // ITERATING THROUGH OBJECTS
+            $.each(data['items'], function (key, value) {
+ $('#txt').prepend(value['text']+"<br>");
+            });
+            //INSERTING ROWS INTO TABLE
 
+        });
+
+});
 
