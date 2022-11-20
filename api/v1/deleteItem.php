@@ -1,16 +1,6 @@
 <?php
-$storage = json_decode(file_get_contents('storage.json'), true);
-
-if ($_POST['id'] < sizeof($storage['items'])) {
-
-    $id = 0;
-    foreach ($storage['items'] as $val) {
-        if ($val['id'] != $_POST['id']) {
-            $storage['items'][$id] = $val;
-            $id++;
-        }
-    }
-    unset($storage['items'][sizeof($storage['items']) - 1]);
-    file_put_contents('storage.json', json_encode($storage));
-}
+$db_handle = require './getItem.php' ;
+mysqli_select_db($db_handle, "todo");
+$sql = "DELETE FROM items WHERE id={$_POST['id']}";
+$result = mysqli_query($db_handle, $sql);
 
